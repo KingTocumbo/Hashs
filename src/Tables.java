@@ -27,6 +27,11 @@ public class Tables<E> {
 		main_conjunto.add(value);
 	}
 	
+	//Metodo para retornar el conjunto.
+    public Set<E> getConjunto(){
+        return main_conjunto;
+    }
+    
 	/* Interseccion de tres conjuntos */
 	public Set<E> getInterseccion(Set<E> conjuntoA, Set<E> conjuntoB, Set<E> conjuntoC){
 		temp_conjunto.clear();

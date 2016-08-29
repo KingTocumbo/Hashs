@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Set;
 
 public class Main {
 
@@ -36,9 +37,9 @@ public class Main {
 		}
 		
 		/* Conjuntos de desarrolladores */
-		Tables conjunto_Java = new Tables(implementacion);
-		Tables conjunto_Web = new Tables(implementacion);
-		Tables conjunto_Movil = new Tables(implementacion);
+		Tables<String> conjunto_Java = new Tables(implementacion);
+		Tables<String> conjunto_Web = new Tables(implementacion);
+		Tables<String> conjunto_Movil = new Tables(implementacion);
 		menu_active = true; /* Reset menu_active */
 	
 		/* Ingreso de datos */
@@ -85,9 +86,27 @@ public class Main {
 			
 			System.out.println("Desea agregar otra persona? \n1. SI \n2. NO");
 			int temp = Integer.valueOf(scan.nextLine());
-			if(temp == 2)
-				menu_active = false;
+			if(temp == 2){
+				Set<String> A = conjunto_Java.getConjunto();
+				Set<String> B = conjunto_Web.getConjunto();
+				Set<String> C = conjunto_Movil.getConjunto();
+				System.out.println("\nA continuación se le mostrará información valiosa:  ");
+				System.out.println("\nLos desarrolladores con experiencia en Java, web y celulares son: "+conjunto_Java.getInterseccion(A,B,C));
+				System.out.println("\nLos desarrolladores con experienca en Java que no tienen experiencia web son: "+conjunto_Java.getResta(A, B));
+				System.out.println("\nLos desarrolladores con experienca en Web y Movil, sin experiencia en Java son: "+conjunto_Java.getInterseccion(B, C));
+				System.out.println("\nLos desarrolladores con experienca en Web o Movil, sin experiencia en Java son: "+conjunto_Java.getUnion(B, C));
+				boolean temp_temp = false;
+				temp_temp=conjunto_Java.estaAenB(A, B);
+				if (temp_temp){
+					System.out.println("\nEl conjunto de desarrolladores Java es un subconjunto del de desarrolladores Web");
+				}
+				else{
+					System.out.println("\nEl conjunto de desarrolladores Java no es un subconjunto del de desarrolladores Web.");
+				}
 				
+				menu_active=false;
+
+				}
 			
 		}
 	}
