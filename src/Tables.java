@@ -85,6 +85,9 @@ public class Tables<E> {
 	        }
 	}
 	
+	public String getNombreMayor(){
+		return may;
+	}
 	/* ¿A es subconjunto de B ? */
 	public boolean estaAenB(Set<E> conjuntoA, Set<E> conjuntoB){
 		temp_conjunto.clear();

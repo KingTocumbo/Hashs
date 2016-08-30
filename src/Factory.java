@@ -3,6 +3,12 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
+/** 
+* Clase: Factory.java
+* @author Diego Soler, Fredy Espana
+* @version 28/08/16
+*/
+
 public class Factory <E> {
 	
 	/* El metodo recibe un numero entero para crear la lista y la retorna */

@@ -1,5 +1,10 @@
 import java.util.Scanner;
 import java.util.Set;
+/** 
+* Clase: Main.java
+* @author Diego Soler, Fredy Espana
+* @version 28/08/16
+*/
 
 public class Main {
 
@@ -56,6 +61,7 @@ public class Main {
 			trabajo = Integer.valueOf(scan.nextLine());
 			
 			switch(trabajo){
+				//Opciones para agregar
 				case 1:
 					conjunto_Java.addElement(nombre);
 					break;
@@ -87,9 +93,11 @@ public class Main {
 			System.out.println("Desea agregar otra persona? \n1. SI \n2. NO");
 			int temp = Integer.valueOf(scan.nextLine());
 			if(temp == 2){
+				//Se cargan los conjuntos a variables
 				Set<String> A = conjunto_Java.getConjunto();
 				Set<String> B = conjunto_Web.getConjunto();
 				Set<String> C = conjunto_Movil.getConjunto();
+				Set<String> D = conjunto_Java.getConjuntoMayor(A,B,C); //Conjunto Mayor
 				System.out.println("\nA continuación se le mostrará información valiosa:  ");
 				System.out.println("\nLos desarrolladores con experiencia en Java, web y celulares son: "+conjunto_Java.getInterseccion(A,B,C));
 				System.out.println("\nLos desarrolladores con experienca en Java que no tienen experiencia web son: "+conjunto_Java.getResta(A, B));
@@ -104,7 +112,8 @@ public class Main {
 					System.out.println("\nEl conjunto de desarrolladores Java no es un subconjunto del de desarrolladores Web.");
 				}
 				
-				menu_active=false;
+				System.out.println("\nEl conjunto mayor es el de "+conjunto_Java.getNombreMayor()+", y está contenido por las siguientes personas (en orden ascendente): "+conjunto_Java.conjuntoToString(D));
+				menu_active=false; //Fin del programa
 
 				}
 			
