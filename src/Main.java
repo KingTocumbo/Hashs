@@ -100,6 +100,7 @@ public class Main {
 				Set<String> D = conjunto_Java.getConjuntoMayor(A,B,C); //Conjunto Mayor
 				System.out.println("\nA continuación se le mostrará información valiosa:  ");
 				System.out.println("\nLos desarrolladores con experiencia en Java, web y celulares son: "+conjunto_Java.getInterseccion(A,B,C));
+				//   Interseccion y union especificamente entre los conjuntos de Movil y Web, sin tomar en cuenta al conjunto JAVA
 				System.out.println("\nLos desarrolladores con experienca en Java que no tienen experiencia web son: "+conjunto_Java.getResta(A, B));
 				System.out.println("\nLos desarrolladores con experienca en Web y Movil, sin experiencia en Java son: "+conjunto_Java.getInterseccion(B, C));
 				System.out.println("\nLos desarrolladores con experienca en Web o Movil, sin experiencia en Java son: "+conjunto_Java.getUnion(B, C));
